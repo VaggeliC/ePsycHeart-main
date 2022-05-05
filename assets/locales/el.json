@@ -1,0 +1,159 @@
+{
+  "app": {
+    "title": "CardioCare"
+  },
+  "core": {
+    "header": "Οι σημερινές δράσεις",
+    "questionnaires": "Ερωτηματολόγιο"
+  },
+  "language": {
+    "english": "αγγλικά",
+    "greek": "ελληνικά"
+  },
+  "cognitive": {
+    "gameInstructions": "Οδηγίες Παιχνιδιού",
+    "menu": {
+      "title": "Γνωστική Διέγερση & Εξάσκηση",
+      "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac turpis congue, ullamcorper orci ut, venenatis justo. Vestibulum at libero leo. Vivamus eu ipsum sagittis, lobortis ipsum in, vestibulum turpis. Maecenas ut felis molestie, suscipit risus eget, auctor dui. Vestibulum ac hendrerit orci. Donec tempus posuere nibh, at dictum dui. Donec rhoncus finibus diam quis facilisis. Mauris augue neque, mollis in accumsan in, fringilla quis nisl."
+    },
+    "gameWord": {
+      "title": "Βρές τη Λέξη",
+      "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac turpis congue, ullamcorper orci ut, venenatis justo. Vestibulum at libero leo. Vivamus eu ipsum sagittis, lobortis ipsum in, vestibulum turpis. Maecenas ut felis molestie, suscipit risus eget, auctor dui. Vestibulum ac hendrerit orci. Donec tempus posuere nibh, at dictum dui. Donec rhoncus finibus diam quis facilisis. Mauris augue neque, mollis in accumsan in, fringilla quis nisl.",
+      "defaultLetters": "αβγδεζηθικλμνξοπρστυφχψω",
+      "winsText": "Νίκες",
+      "lossesText": "Ήττες",
+      "winText": "Βρήκες τη λέξη",
+      "lostText": "Προσπάθησε ξανά",
+      "words": {
+        "0": "ΛΕΜΟΝΙ",
+        "1": "ΠΕΠΟΝΙ",
+        "2": "ΜΗΛΟ",
+        "3": "ΣΚΥΛΟΣ",
+        "4": "ΓΑΤΑ",
+        "5": "ΚΙΤΡΟ"
+      }
+    },
+    "gameTicTacToe": {
+      "title": "Τρίλιζα",
+      "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac turpis congue, ullamcorper orci ut, venenatis justo. Vestibulum at libero leo. Vivamus eu ipsum sagittis, lobortis ipsum in, vestibulum turpis. Maecenas ut felis molestie, suscipit risus eget, auctor dui. Vestibulum ac hendrerit orci. Donec tempus posuere nibh, at dictum dui. Donec rhoncus finibus diam quis facilisis. Mauris augue neque, mollis in accumsan in, fringilla quis nisl.",
+      "player": "Παίχτης",
+      "opponent": "Αντίπαλος",
+      "winsScoreTitle": "Νίκες Παίχτη",
+      "drawsScoreTitle": "Ισοπαλίες",
+      "lossesScoreTitle": "Νίκες Αντιπάλου",
+      "winsText": "Νίκες",
+      "drawsText": "Ισοπαλίες",
+      "lossesText": "Ήττες",
+      "winText": "Κέρδισες!",
+      "drawText": "Είναι Ισοπαλία",
+      "lostText": "Κέρδισε ο Αντίπαλος",
+      "playerTurn": "Είναι η Σειρά σου",
+      "opponentTurn": "Παίζει ο Αντίπαλος",
+      "gameOver": "Το Παχνίδι Έληξε"
+    },
+    "gameColorBeans": {
+      "title": "Χρωματιστά Φασόλια"
+    },
+    "gameDrawing": {
+      "title": "Ζωγραφική",
+      "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac turpis congue, ullamcorper orci ut, venenatis justo. Vestibulum at libero leo. Vivamus eu ipsum sagittis, lobortis ipsum in, vestibulum turpis. Maecenas ut felis molestie, suscipit risus eget, auctor dui. Vestibulum ac hendrerit orci. Donec tempus posuere nibh, at dictum dui. Donec rhoncus finibus diam quis facilisis. Mauris augue neque, mollis in accumsan in, fringilla quis nisl."
+    },
+    "gameQuestion": {
+      "title": "Παιχνίδι Ερωτήσεων",
+      "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac turpis congue, ullamcorper orci ut, venenatis justo. Vestibulum at libero leo. Vivamus eu ipsum sagittis, lobortis ipsum in, vestibulum turpis. Maecenas ut felis molestie, suscipit risus eget, auctor dui. Vestibulum ac hendrerit orci. Donec tempus posuere nibh, at dictum dui. Donec rhoncus finibus diam quis facilisis. Mauris augue neque, mollis in accumsan in, fringilla quis nisl."
+    }
+  },
+  "geriatric": {
+    "menu": {
+      "title": "Εκτίμηση Γηριατρικών Συνδρόμων",
+      "incontinence": "Διαχείριση Ακράτειας",
+      "fallsMitigation": "Μετριασμός Πτώσεων"
+    },
+    "incontinence": {
+      "expressiveWritingTitle": "Ακράτεια Ούρων",
+      "startWriting": "Καταγραφή Ούρησης",
+      "reminders": "Υπενθυμίσεις",
+      "howToStartWriting": "Ασκήσεις Πυελικού Εδάφους",
+      "duration": "1-4 ΛΕΠΤΑ Ασκήσεων",
+      "session": "Συνεδρία",
+      "instructions": "Οδηγίες",
+      "details": "Λεπτομερείς οδηγίες & εικόνες σχετικά με ασκήσεις πυελικού εδάφους",
+
+      "formPage": {
+        "header": "Προσθήκη Συμβάντος",
+        "event": "Συμβάν",
+        "date": "Ημερομηνία",
+        "timer": "Ένταση",
+        "eventLog": "Ημερολόγιο Συμβάντων",
+        "header": "Επιλογή ημερομηνίας",
+        "submit": "Ούρηση",
+        "leak": "Διαρροή",
+        "urge": "Επείγον",
+        "etc": "Βήχας, Γέλιο, κτλ."
+      },
+
+      "addReminder": {
+        "title": "Υπενθυμίσεις Ασκήσεων",
+        "yourReminders": "Οι υπενθυμίσεις σας",
+        "addReminder": "Προσθήκη Υπενθύμισης",
+        "titleReminder": "Τίτλος",
+        "enterTitle": "Εισάγεται τίτλο",
+        "weekday": "Επιλέξτε ημέρα",
+        "time": "Ώρα",
+        "enterTimeOf": "Εισάγετε ώρα ...",
+        "add": "Προσθήκη"
+      }
+    }
+  },
+  "psychology": {
+    "menu": {
+      "title": "Ψυχολογία & Ευεξία ",
+      "expressiveWriting": "Εκφραστική Γραφή",
+      "header": "Αισθάνεστε καταβεβλημένοι από τον Καρκίνο; \n\nΗ εκφραστική γραφή μπορεί να βοηθήσει",
+      "subheader1": "\nΤι είναι η Εκφραστική Γραφή;",
+      "text1": "\nΗ εκφραστική γραφή είναι εύκολη. Απλά καθίστε και γράψτε για κάτι που σας απασχολεί. Είναι απλό και δεν υπάρχει σωστός ή λάθος τρόπος για να το κάνετε.\n\nΑυτή η εφαρμογή σας παροτρύνει να δοκιμάσετε την εκφραστική γραφή για να σας βοηθήσει να αντιμετωπίσετε το ξέσπασμα του καρκίνου. Γράφοντας για τις σκέψεις και τα συναισθήματά σας για μόλις 5-10 λεπτά, μπορείτε να αλλάξετε τον τρόπο με τον οποίο σκέφτεστε, αισθάνεστε ή ακόμη και κοιμάστε.",
+      "subheader2": "\nΠοια είναι τα οφέλη της εκφραστικής γραφής;",
+      "text2": "\nΗ εκφραστική γραφή υπάρχει πάνω από 30 χρόνια. Εκατοντάδες πειράματα έχουν αποδείξει την αποτελεσματικότητά της στη βελτίωση της ψυχικής και σωματικής υγείας των ανθρώπων. Εκφράζοντας με λέξεις τις συναισθηματικές ανατροπές, αρχίζουμε να τις καταλαβαίνουμε καλύτερα. Μόλις αντιμετωπίσουμε καλύτερα τα προβλήματά μας, μπορούμε να προχωρήσουμε και να συνεχίσουμε τη ζωή."
+    },
+    "expressiveWriting": {
+      "expressiveWritingTitle": "Εκφραστική Γραφή",
+      "startWriting": "Ξεκινήστε να γράφετε",
+      "reminders": "Υπενθυμίσεις\n",
+      "howToStartWriting": "Πώς να ξεκινήσετε να γράφετε",
+      "duration": "Διάρκεια: 5-10 Λεπτά",
+      "instructions": "Οδηγίες",
+      "details": "Για να ξεκινήσετε, προγραμματίστε να αφιερώσετε τουλάχιστον 5-10 λεπτά (ή περισσότερο, αν θέλετε) γράφοντας για την εμπειρία σας με τον καρκίνο. Οι βασικές οδηγίες είναι για να γράψετε για τις βαθύτερες σκέψεις και τα συναισθήματά σας σχετικά με το θέμα σας χωρίς να ανησυχείτε για την ορθογραφία, τη γραμματική ή τη δομή της πρότασης. Απλώς γράψτε.",
+
+      "formPage": {
+        "header": "ΕΚΦΡΑΣΤΙΚΗ ΓΡΑΦΗ: Οι σκέψεις και τα συναισθήματά σας για τον καρκίνο\n",
+        "text": "Στο παρακάτω πλαίσιο, εκφράστε τις σκέψεις και τα συναισθήματά σας για τον καρκίνο με όσο περισσότερες λεπτομέρειες μπορείτε. Προσπαθήστε να αφεθείτε και απλώς γράψτε για τουλάχιστον 5-10 λεπτά (ή περισσότερο αν θέλετε). Μπορείτε να γράψετε για το πώς το ξέσπασμα επηρεάζει εσάς και τους ανθρώπους γύρω σας. Ή πώς αντιμετωπίζετε συναισθήματα όπως το άγχος; Προσπαθήστε πραγματικά να αντιμετωπίσετε αυτά τα ζητήματα που είναι πιο σημαντικά για εσάς. Γράψτε συνεχόμενα όλη την ώρα και μην ανησυχείτε πολύ για ορθογραφικά ή λάθη στίξης.\n\nΌλες οι πληροφορίες θα παραμείνουν ανώνυμες και εμπιστευτικές.",
+        "date": "Ημερομηνία: ",
+        "timer": "Χρόνος: ",
+        "submit": "Υποβολή",
+        "alert": "Προσοχή",
+        "textAlert": "Πρέπει να γράψετε κάτι για να αναλύσουμε."
+      },
+
+      "resultPage": {
+        "header": "ΕΚΦΡΑΣΤΙΚΗ ΓΡΑΦΗ: Ανατροφοδότηση                                          \n\n",
+        "text": "Για αυτήν την άσκηση γραφής, σας ζητήθηκε να γράψετε 5-10 λεπτά για τις βαθύτερες σκέψεις και τα συναισθήματά σας σχετικά με τον καρκίνο. Πριν εξετάσετε τα σχόλιά σας, είναι σημαντικό να γνωρίζετε ότι είστε ο πραγματικός κριτής της γραφής σας. Το βρήκατε χρήσιμο; Σκέφτεστε το θέμα με διαφορετικό τρόπο από ό,τι όταν ξεκινήσατε;",
+        "date": "Ημερομηνία: ",
+        "timeTaken": "Χρόνος που απαιτήθηκε: ",
+        "wordCount": "Καταμέτρηση λέξεων: ",
+        "yourWriting": "Η γραφή σου\n\n                                                                                                "
+      },
+
+      "addReminder": {
+        "title": "Υπενθυμίσεις Εκφραστικής Γραφής",
+        "yourReminders": "Οι υπενθυμίσεις σας",
+        "addReminder": "Προσθήκη Υπενθύμισης",
+        "titleReminder": "Τίτλος",
+        "enterTitle": "Εισάγεται τίτλο",
+        "weekday": "Επιλέξτε ημέρα",
+        "time": "Ώρα",
+        "enterTimeOf": "Εισάγετε ώρα ...",
+        "add": "Προσθήκη"
+      }
+    }
+  }
+}
