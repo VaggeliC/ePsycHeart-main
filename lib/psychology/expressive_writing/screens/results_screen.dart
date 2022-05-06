@@ -4,14 +4,16 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart' as intl;
 import 'dart:async';
-
 import '../utilities/constantscolors.dart';
 
 class ResultsScreen extends StatefulWidget {
-  const ResultsScreen({Key? key}) : super(key: key);
 
+  const ResultsScreen({Key? key, required this.wordCount, required this.timeText, required this.description}) : super(key: key);
+  final int wordCount;
+  final String timeText;
+  final String description;
   @override
-  _ResultsScreenState createState() => _ResultsScreenState();
+  _ResultsScreenState createState() => _ResultsScreenState(wordCount, timeText, description);
 }
 
 String formatTime(int milliseconds) {
@@ -24,15 +26,24 @@ String formatTime(int milliseconds) {
 }
 
 class _ResultsScreenState extends State<ResultsScreen> {
+  _ResultsScreenState(this.wordCount, this.timeText, this.description);
+  // late final int  wordCount;
   final _formKey = GlobalKey<FormState>();
   String title = '';
-  String description = '';
+  // String description = '';
   DateTime date = DateTime.now();
   double maxValue = 0;
   bool? brushedTeeth = false;
   bool enableFeature = false;
   late Stopwatch _stopwatch;
   late Timer _timer;
+
+  final int wordCount;
+  final String timeText;
+  final String description;
+
+
+
 
   @override
   void dispose() {
@@ -42,6 +53,10 @@ class _ResultsScreenState extends State<ResultsScreen> {
 
   @override
   void initState() {
+    print('********************');
+    print(timeText);
+    print(wordCount);
+    print(description.trim());
     super.initState();
     _stopwatch = Stopwatch();
     _timer = Timer.periodic(Duration(milliseconds: 30), (timer) {
@@ -135,7 +150,7 @@ class _ResultsScreenState extends State<ResultsScreen> {
                         },
                       ),
                     ].expand(
-                      (widget) => [
+                          (widget) => [
                         widget,
                         const SizedBox(
                           height: 24,
@@ -150,8 +165,8 @@ class _ResultsScreenState extends State<ResultsScreen> {
                       children: <Widget>[
                         Text(
                             'psychology.expressiveWriting.resultPage.timeTaken'
-                                    .tr() +
-                                formatTime(_stopwatch.elapsedMilliseconds) +
+                                .tr() +
+                                timeText +
                                 '                                                                                           ',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -167,8 +182,9 @@ class _ResultsScreenState extends State<ResultsScreen> {
                       children: <Widget>[
                         Text(
                             'psychology.expressiveWriting.resultPage.wordCount'
-                                    .tr() +
-                                '                                                                                                                   ',
+                                .tr() + '$wordCount'+
+                                '             '
+                                    '                                                                                                      ',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
@@ -192,12 +208,13 @@ class _ResultsScreenState extends State<ResultsScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                            'psychology.expressiveWriting.resultPage.yourWriting'
-                                .tr(),
+                            'psychology.expressiveWriting.resultPage.yourWriting'.tr()
+                                + '' + description.trim(),
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
                             )),
+
                       ],
                     ),
                     const SizedBox(

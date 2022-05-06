@@ -1,3 +1,5 @@
+import 'package:epsycheart/cognitive/common/constants/spacing_constants.dart';
+import 'package:epsycheart/cognitive/common/widgets/layouts/action_screen_layout.dart';
 import 'package:epsycheart/core/utilities/app_theme.dart';
 import 'package:epsycheart/core/widgets/language_button.dart';
 import 'package:epsycheart/psychology/expressive_writing/screens/results_screen.dart';
@@ -39,6 +41,7 @@ class _ExpressiveWritingFormState extends State<ExpressiveWritingForm> {
   late Timer _timer;
   RegExp regExp = RegExp(" ");
   int wordcount = 0;
+  int test =0;
 
   @override
   void dispose() {
@@ -67,173 +70,179 @@ class _ExpressiveWritingFormState extends State<ExpressiveWritingForm> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: drawerColor,
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            padding: EdgeInsets.all(0),
-            onPressed: () {},
-            icon: Icon(Icons.notifications),
-            color: AppTheme.black,
-            iconSize: 32,
-          ),
-          LanguageButton()
-        ],
-        //  iconTheme: const IconThemeData(color: Color(0xFF17262A)),
-        iconTheme: const IconThemeData(color: AppTheme.black),
-
-        backgroundColor: AppTheme.background,
-        // automaticallyImplyLeading: false,
-        centerTitle: true,
-        title: Text(
-          'psychology.expressiveWriting.expressiveWritingTitle',
-          style: TextStyle(fontSize: 25, color: AppTheme.black),
-        ).tr(),
-      ),
-      body: Form(
-        key: _formKey,
-        child: Scrollbar(
-          //alignment: Alignment.topCenter,
-          child: Card(
-            child: SingleChildScrollView(
-              padding: const EdgeInsets.all(12),
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 550),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      'psychology.expressiveWriting.formPage.header',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 19,
-                      ),
-                    ).tr(),
-                    Text(
-                      'psychology.expressiveWriting.formPage.text',
-                      style: TextStyle(
-                        fontWeight: FontWeight.normal,
-                        fontSize: 19,
-                      ),
-                    ).tr(),
-                    const Divider(
-                      height: 20,
-                      thickness: 1,
-                      indent: 0,
-                      endIndent: 0,
-                      color: AppTheme.black,
-                    ),
-                    const SizedBox(
-                      height: 0,
-                    ),
-                    ...[
-                      _FormDatePicker(
-                        date: date,
-                        onChanged: (value) {
-                          setState(() {
-                            date = value;
-                          });
-                        },
-                      ),
-                    ].expand(
-                      (widget) => [
-                        widget,
-                        const SizedBox(
-                          height: 22,
-                        )
-                      ],
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                            'psychology.expressiveWriting.formPage.timer'.tr() +
-                                formatTime(_stopwatch.elapsedMilliseconds),
+    return ActionScreenLayout(
+        title: 'psychology.expressiveWriting.expressiveWritingTitle'.tr(),
+        //  flexContentArea: 30,
+        flexActionsArea: 800,
+        verticalAreaSpacing: SpacingConstants.spacingXXL,
+        // card grid
+        flexContentArea: 50,
+        screenActions: [
+          Expanded(
+            child: Form(
+              key: _formKey,
+              child: Scrollbar(
+                //alignment: Alignment.topCenter,
+                child: Card(
+                  child: SingleChildScrollView(
+                    padding: const EdgeInsets.all(12),
+                    child: ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 550),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            'psychology.expressiveWriting.formPage.header',
                             style: TextStyle(
-                                fontSize: 20.0,
-                                background: Paint()
-                                  ..strokeWidth = 25.0
-                                  ..color = Colors.grey
-                                  ..style = PaintingStyle.stroke
-                                  ..strokeJoin = StrokeJoin.round)),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    TextFormField(
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        filled: true,
-                        //hintText: 'Write your thoughts and feelings...',
-                        //labelText: 'Description',
-                      ),
-                      onChanged: (value) {
-                        _stopwatch.start();
-                        description = value;
-
-                        if (kDebugMode) {
-                          wordcount = regExp.allMatches(value).length + 1;
-                          print(wordcount);
-                        }
-                      },
-                      maxLines: 14,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10.0),
-                      child: ElevatedButton(
-                        onPressed: () => {
-                          // Validate returns true if the form is valid, or false otherwise.
-                          if (_formKey.currentState!.validate() &&
-                              wordcount > 0)
-                            {
-                              _stopwatch.stop(),
-                              print(formatTime(_stopwatch.elapsedMilliseconds)),
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: ((context) => ResultsScreen()))),
-                              // If the form is valid, display a snackbar. In the real world,
-                              // you'd often call a server or save the information in a database.
-                              ScaffoldMessenger.of(context).showSnackBar(
-                                const SnackBar(
-                                    content: Text('Processing Data')),
-                              ),
-                            }
-                          else
-                            {
-                              AlertUtil.showAlert(context, 'psychology.expressiveWriting.formPage.alert'.tr(),
-                                  'psychology.expressiveWriting.formPage.textAlert.'.tr())
-                            }
-                        },
-                        style: ElevatedButton.styleFrom(
-                            primary: AppTheme.blue,
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 40, vertical: 15),
-                            textStyle: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.bold)),
-                        child: const Text(
-                          'psychology.expressiveWriting.formPage.submit',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 19,
+                            ),
+                          ).tr(),
+                          Text(
+                            'psychology.expressiveWriting.formPage.text',
+                            style: TextStyle(
+                              fontWeight: FontWeight.normal,
+                              fontSize: 19,
+                            ),
+                          ).tr(),
+                          const Divider(
+                            height: 20,
+                            thickness: 1,
+                            indent: 0,
+                            endIndent: 0,
+                            color: AppTheme.black,
                           ),
-                        ).tr(),
+                          const SizedBox(
+                            height: 0,
+                          ),
+                          ...[
+                            _FormDatePicker(
+                              date: date,
+                              onChanged: (value) {
+                                setState(() {
+                                  date = value;
+                                });
+                              },
+                            ),
+                          ].expand(
+                                (widget) =>
+                            [
+                              widget,
+                              const SizedBox(
+                                height: 22,
+                              )
+                            ],
+                          ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                                  'psychology.expressiveWriting.formPage.timer'
+                                      .tr() +
+                                      formatTime(
+                                          _stopwatch.elapsedMilliseconds),
+                                  style: TextStyle(
+                                      fontSize: 20.0,
+                                      background: Paint()
+                                        ..strokeWidth = 25.0
+                                        ..color = Colors.grey
+                                        ..style = PaintingStyle.stroke
+                                        ..strokeJoin = StrokeJoin.round)),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 30,
+                          ),
+                          TextFormField(
+                            decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                              filled: true,
+                              //hintText: 'Write your thoughts and feelings...',
+                              //labelText: 'Description',
+                            ),
+                            onChanged: (value) {
+                              _stopwatch.start();
+                              description = value;
+                              print(description);
+                              // description.trim();
+
+                              if (kDebugMode)  {
+                                wordcount = regExp.allMatches(value).length+1;
+                                print(wordcount);
+                              }
+
+                            },
+                            maxLines: 14,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 10.0),
+                            child: ElevatedButton(
+                              onPressed: () =>
+                              {
+                                // Validate returns true if the form is valid, or false otherwise.
+                                if (_formKey.currentState!.validate() &&
+                                    wordcount > 0)
+                                  {
+                                    _stopwatch.stop(),
+                                    print(formatTime(
+                                        _stopwatch.elapsedMilliseconds)),
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: ((context) =>
+                                                ResultsScreen(
+                                                  wordCount: wordcount,
+                                                  timeText: formatTime(
+                                                      _stopwatch
+                                                          .elapsedMilliseconds),
+                                                  description: description,
+                                                )))),
+                                    // If the form is valid, display a snackbar. In the real world,
+                                    // you'd often call a server or save the information in a database.
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      const SnackBar(
+                                          content: Text('Processing Data')),
+                                    ),
+                                  }
+                                else
+                                  {
+                                    AlertUtil.showAlert(
+                                        context,
+                                        'psychology.expressiveWriting.formPage.alert'
+                                            .tr(),
+                                        'psychology.expressiveWriting.formPage.textAlert.'
+                                            .tr())
+                                  }
+                              },
+                              style: ElevatedButton.styleFrom(
+                                  primary: AppTheme.blue,
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 40, vertical: 15),
+                                  textStyle: TextStyle(
+                                      fontSize: 30,
+                                      fontWeight: FontWeight.bold)),
+                              child: const Text(
+                                'psychology.expressiveWriting.formPage.submit',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20,
+                                ),
+                              ).tr(),
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 50,
+                          ),
+                        ],
                       ),
                     ),
-                    const SizedBox(
-                      height: 50,
-                    ),
-                  ],
+                  ),
                 ),
               ),
             ),
-          ),
-        ),
-      ),
-    );
+          )
+        ]);
   }
 }
 
